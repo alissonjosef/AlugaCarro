@@ -1,0 +1,10 @@
+config.properties
+.classpath
+.project
+.settings/
+.idea/
+.idea/**
+target/
+out/
+*.iml
+.vccode
