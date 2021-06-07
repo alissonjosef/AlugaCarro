@@ -1,11 +1,11 @@
 package Repositorys;
 
 import java.util.ArrayList;
-import java.util.Date;
 
+import models.Model;
 import models.Reserva;
 
-public class ReservaDAO {
+public class ReservaDAO extends DAO{
 
 	private static ReservaDAO uniqueInstance;
 
@@ -23,12 +23,17 @@ public class ReservaDAO {
 	}
 
 	@Override
-	public Reserva consultar(Date inicio) {                   // consultando pela data de inicio
-		Reserva reserva = super.consultar(inicio);
-		if (reserva == null) {
+	public Reserva consultar(Integer id) {                   
+		Model model = super.consultar(id);
+		if (model == null) {
 			System.out.println("Reserva não encontrado!");
 		}
-		return (Reserva) reserva; // revisar
+		return (Reserva) model; 
 	}
+
+	
+	
+	
+	
 
 }

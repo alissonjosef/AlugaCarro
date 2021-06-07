@@ -1,12 +1,13 @@
 package Controllers;
 
-import java.util.Date;
-
 import Repositorys.ReservaDAO;
+import models.Model;
 import models.Pessoa;
 import models.Reserva;
+import models.Veiculo;
 
 public class ReservaController {
+	
 	private ReservaDAO reservaDAO;
 
 	public ReservaController() {
@@ -14,45 +15,46 @@ public class ReservaController {
 		this.reservaDAO = new ReservaDAO().getInstancia();
 	}
 
-	public Date criarReserva(Reserva reserva) {                    // tive que mudar de int para Date
+	public int criarReserva(Reserva reserva, Pessoa pessoa, Veiculo veiculo) {
 		System.out.println("[controller] Metodo Criar Reserva");
-		reserva.setInicio(null);
-		Date inicio = this.reservaDAO.inserir(reserva);
-		return inicio;
+		reserva.setId(null);
+		pessoa.isAtivo();
+		veiculo.isAlugado();
+		
+		int id = this.reservaDAO.inserir(reserva);
+		return id;
 
 	}
 
-	public Reserva consultarReserva(Date inicio) {
-		Reserva reserva = this.reservaDAO.consultar(inicio);
+	public Reserva consultarReserva(Integer id) {
+		Reserva reserva = this.reservaDAO.consultar(id);
 		return reserva;
 	}
 
-
-	public void consultarReserva(Date inicio) {
-		this.reservaDAO.consultar(inicio);
-	}
-
-	public Pessoa atualizarReserva(Reserva reservaParaAtualizar) {
-		Reserva reservaSalva = consultarReserva(reservaParaAtualizar.getInicio());
+	public Reserva atualizarReserva(Reserva reservaParaAtualizar) {
+		Reserva reservaSalva = consultarReserva(reservaParaAtualizar.getId());
 
 		reservaSalva.setCliente(reservaParaAtualizar.getCliente());
 		reservaSalva.setVeiculo(reservaParaAtualizar.getVeiculo());
+		reservaSalva.setInicio(reservaParaAtualizar.getInicio());
+		reservaSalva.setFim(reservaParaAtualizar.getFim());
 
-		if (reservaSalva instanceof Reserva) {
+	//	if (reservaSalva instanceof Reserva) {                      // Reserva sendo uma classe concreta nao precis usar instanceof
 
 			Reserva r = (Reserva) reservaSalva;
 			Reserva rPraAtualizar = (Reserva) reservaParaAtualizar;
 
 			r.setCliente(rPraAtualizar.getCliente());
 			r.setVeiculo(rPraAtualizar.getVeiculo());
+			r.setInicio(rPraAtualizar.getInicio());
+			r.setFim(rPraAtualizar.getFim());
+	//	}
 
-		}
-
-		Reserva reserva = this.reservaDAO.atualizar(reservaSalva);        // revisar
-		return (reserva) reserva;
+		Model model = this.reservaDAO.atualizar(reservaSalva); 
+		return (Reserva) model;
 	}
 
-	public void deletar(Date inicio) {           //revisar
-		this.reservaDAO.deletar(inicio);
+	public void deletar(Integer id) {
+		this.reservaDAO.deletar(id);
 	}
 }

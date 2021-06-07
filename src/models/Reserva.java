@@ -2,19 +2,25 @@ package models;
 
 import java.util.Date;
 
-public class Reserva {
+public class Reserva extends Model{
 
     private Date inicio;
     private Date fim;
     private Pessoa cliente;
     private Veiculo veiculo;
 
-    public Reserva(Date inicio, Date fim, Pessoa cliente, Veiculo veiculo) {
-        this.inicio = inicio;
-        this.fim = fim;
-        this.cliente = cliente;
-        this.veiculo = veiculo;
-    }
+    
+   
+    
+    public Reserva(Integer id, Date inicio, Date fim, Pessoa cliente, Veiculo veiculo) {
+		super(id);
+		this.inicio = inicio;
+		this.fim = fim;
+		this.cliente = cliente;
+		this.veiculo = veiculo;
+	}
+
+	
 
     public long getDiasReservados() {
         long dt = (this.inicio.getTime() - this.fim.getTime());
@@ -53,4 +59,14 @@ public class Reserva {
     public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
     }
+
+
+
+	@Override
+	public String toString() {
+		return "Reserva [inicio=" + inicio + ", fim=" + fim + ", cliente=" + cliente + ", veiculo=" + veiculo + "]";
+	}
+    
+    
+    
 }

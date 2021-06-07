@@ -29,6 +29,11 @@ public class Carro extends Veiculo{
         this.tipo = tipo;
     }
 
+	@Override
+	public String toString() {
+		return "Carro [tipo=" + tipo + "]";
+	}
+
 //EXEMPLO DE SOBRECARGA DE METODO
 //    public void setId() {
 //
@@ -42,4 +47,7 @@ public class Carro extends Veiculo{
 //    public void setId(){
 //
 //    }
+    
+    
+    
 }
