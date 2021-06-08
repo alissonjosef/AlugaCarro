@@ -1,11 +1,7 @@
 import Controllers.ClienteController;
 import Controllers.ReservaController;
 import Controllers.VeiculoController;
-import models.Carro;
-import models.Pessoa;
-import models.PessoaFisica;
-import models.Reserva;
-import models.Veiculo;
+import models.*;
 
 public class main {
 
@@ -16,9 +12,9 @@ public class main {
         VeiculoController veiculoController = new VeiculoController();
         ReservaController reservaController = new ReservaController ();
 
-    //     criarCliente(clienteController);
-      //   criarVeiculo(veiculoController);
-      //   criarReserva(reservaController);
+        //criarCliente(clienteController);
+        //criarVeiculo(veiculoController);
+        criarReserva(reservaController);
 
     }
 
@@ -48,11 +44,11 @@ public class main {
         System.out.println("[Main]Criar Reserva");
         Reserva r = new Reserva(null, null, null, null, null);
         r.getDiasReservados();
-        r.setCliente(null);
+        r.getCliente();
         r.setVeiculo(null);
         r.setFim(null);
         r.setFim(null);
-       int idReservaSalva = controller.criarReserva(r);
+       int idReservaSalva = controller.criarReserva(r, null, null);
        
         System.out.println("[Main]Reserva criada - ID:"+idReservaSalva);
 

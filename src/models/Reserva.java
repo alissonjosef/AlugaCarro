@@ -12,7 +12,7 @@ public class Reserva extends Model{
     
    
     
-    public Reserva(Integer id, Date inicio, Date fim, Pessoa cliente, Veiculo veiculo) {
+    public Reserva(Integer id, Integer inicio, Integer fim, Pessoa cliente, Veiculo veiculo) {
 		super(id);
 		this.inicio = inicio;
 		this.fim = fim;
@@ -22,9 +22,9 @@ public class Reserva extends Model{
 
 	
 
-    public long getDiasReservados() {
-        long dt = (this.inicio.getTime() - this.fim.getTime());
-        long dias = (dt / 86400000L);
+    public Integer getDiasReservados() {
+        Integer dt = (this.fim.getTime() - this.inicio.getTime());
+        Integer dias = (dt / 86400000L);
         return dias;
     }
 

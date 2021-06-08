@@ -72,7 +72,7 @@ public class PessoaFisica extends Pessoa{
         return "PessoaFisica{" +
                 "cpf='" + cpf + '\'' +
                 ", dataNascimento=" + dataNascimento +
-                ", cnh='" + cnh + '\'' +
+                ", cnh='" + cnh + '\'' + getNome() +
                 '}';
     }
 }
