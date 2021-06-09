@@ -11,17 +11,28 @@ public class Carro extends Veiculo{
 
     public Carro(){}
 
-    public Carro(Integer id, String placa, boolean alugado, TipoCorEnum cor, long kilometragem, BigDecimal valorDiaria, String marca, TipoCarroEnum tipo) {
-        super(id, placa, alugado, cor, kilometragem, valorDiaria, marca, 4);
-        this.tipo = tipo;
-    }
+    
+  
 
-    public Carro(String placa, TipoCorEnum cor, String marca, long kilometragem, BigDecimal valorDiaria, TipoCarroEnum tipo) {
-        super(placa, cor, marca, kilometragem, valorDiaria, 4);
-        this.tipo = tipo;
-    }
+	public Carro(Integer id, String placa, String marca, String modelo, TipoCorEnum cor, long kilometragem,
+			int quantidadePassageiros, TipoCarroEnum tipo) {
+		super(id, placa, marca, modelo, cor, kilometragem, quantidadePassageiros);
+		this.tipo = tipo;
+	}
 
-    public TipoCarroEnum getTipo() {
+	
+
+    public Carro(Integer id, String placa, boolean alugado, String marca, String modelo, TipoCorEnum cor,
+			long kilometragem, int quantidadePassageiros, BigDecimal valorDiaria, TipoCarroEnum tipo) {
+		super(id, placa, alugado, marca, modelo, cor, kilometragem, quantidadePassageiros, valorDiaria);
+		this.tipo = tipo;
+	}
+
+
+
+
+
+	public TipoCarroEnum getTipo() {
         return tipo;
     }
 
@@ -33,6 +44,18 @@ public class Carro extends Veiculo{
 	public String toString() {
 		return "Carro [tipo=" + tipo + "]";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 //EXEMPLO DE SOBRECARGA DE METODO
 //    public void setId() {

@@ -7,28 +7,42 @@ import java.math.BigDecimal;
 
 public class Moto extends Veiculo{
 
-    private TipoMotoEnum tipo;
+ 
+
+	private TipoMotoEnum tipo;
 
     private BigDecimal seguroAdicional;
 
     public Moto(){}
 
-    public Moto(Integer id, String placa, boolean alugado, TipoCorEnum cor, long kilometragem, BigDecimal valorDiaria, String marca, TipoMotoEnum tipo) {
-        super(id, placa, alugado, cor, kilometragem, valorDiaria, marca, 2);
-        this.tipo = tipo;
+    
+ 
+    public Moto(Integer id, String placa, String marca, String modelo, TipoCorEnum cor, long kilometragem,
+			int quantidadePassageiros, TipoMotoEnum tipo) {
+		super(id, placa, marca, modelo, cor, kilometragem, quantidadePassageiros);
+		this.tipo = tipo;
+	}
 
-    }
 
-    public Moto(String placa, TipoCorEnum cor, String marca, long kilometragem, BigDecimal valorDiaria, TipoMotoEnum tipo) {
-        super(placa, cor, marca, kilometragem, valorDiaria, 2);
-        this.tipo = tipo;
-    }
+    public Moto(Integer id, String placa, boolean alugado, String marca, String modelo, TipoCorEnum cor,
+			long kilometragem, int quantidadePassageiros, BigDecimal valorDiaria, TipoMotoEnum tipo,
+			BigDecimal seguroAdicional) {
+		super(id, placa, alugado, marca, modelo, cor, kilometragem, quantidadePassageiros, valorDiaria);
+		this.tipo = tipo;
+		this.seguroAdicional = seguroAdicional;
+	}
 
-    public TipoMotoEnum getTipo() {
+
+
+
+	
+
+	public TipoMotoEnum getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoMotoEnum tipo) {
+
+     public void setTipo(TipoMotoEnum tipo) {
         this.tipo = tipo;
     }
 
@@ -39,6 +53,14 @@ public class Moto extends Veiculo{
     public void setSeguroAdicional(BigDecimal seguroAdicional) {
         this.seguroAdicional = seguroAdicional;
     }
+    
+    
+    
+    
+    
+    
+    
+    
 //EXEMPLO DE SOBRECARGA DE METODO
 //    public void setId() {
 //

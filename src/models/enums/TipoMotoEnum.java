@@ -2,9 +2,9 @@ package models.enums;
 
 public enum TipoMotoEnum {
 
-    CC150(1,"150cc"),
-    CC250(2,"250cc"),
-    CC350(3,"300cc");
+    NAKED('H',"Naked"),
+    SCOOTER('S',"Scooter"),
+    TRAIL('T',"Trail");
 
     private int codigo;
     private String descricao;

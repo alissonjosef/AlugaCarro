@@ -32,7 +32,7 @@ public class ClienteController {
         this.pessoaDAO.consultar(cpfCnpj);
     }
     
-    public Pessoa atualziarCliente(Pessoa pessoaParaAtualizar){
+    public Pessoa atualizarCliente(Pessoa pessoaParaAtualizar){
         Pessoa pessoaSalva = consultarCliente(pessoaParaAtualizar.getId());
 
         pessoaSalva.setEndereco(pessoaParaAtualizar.getEndereco());

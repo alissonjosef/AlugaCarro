@@ -26,7 +26,7 @@ public class ReservaDAO extends DAO{
 	public Reserva consultar(Integer id) {                   
 		Model model = super.consultar(id);
 		if (model == null) {
-			System.out.println("Reserva n√£o encontrado!");
+			System.out.println("Reserva n„o encontrado!");
 		}
 		return (Reserva) model; 
 	}

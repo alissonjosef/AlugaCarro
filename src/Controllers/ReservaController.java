@@ -15,13 +15,19 @@ public class ReservaController {
 		this.reservaDAO = new ReservaDAO().getInstancia();
 	}
 
-	public int criarReserva(Reserva reserva, Pessoa pessoa, Veiculo veiculo) {
+	
+	
+
+
+	public int criarReserva(Reserva reserva) {
 		System.out.println("[controller] Metodo Criar Reserva");
 		reserva.setId(null);
-		pessoa.isAtivo();
-		veiculo.isAlugado();
+		
+	
 		
 		int id = this.reservaDAO.inserir(reserva);
+		
+		
 		return id;
 
 	}
@@ -56,5 +62,13 @@ public class ReservaController {
 
 	public void deletar(Integer id) {
 		this.reservaDAO.deletar(id);
+	}
+	
+	
+	public void salvarReserva() {
+		
+		
+		
+		
 	}
 }

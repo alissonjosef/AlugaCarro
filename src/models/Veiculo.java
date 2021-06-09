@@ -11,6 +11,8 @@ public abstract class Veiculo extends Model{
     private boolean alugado = false;
 
     private String marca;
+   
+    private String modelo;
 
     private TipoCorEnum cor;
 
@@ -23,28 +25,42 @@ public abstract class Veiculo extends Model{
 
     public Veiculo(){}
 
-    public Veiculo(Integer id, String placa, boolean alugado, TipoCorEnum cor, long kilometragem, BigDecimal valorDiaria, String marca, int quantidadePassageiros) {
-        super(id);
-        this.placa = placa;
-        this.alugado = alugado;
-        this.cor = cor;
-        this.kilometragem = kilometragem;
-        this.valorDiaria = valorDiaria;
-        this.marca = marca;
-        this.quantidadePassageiros = quantidadePassageiros;
-    }
+    
+  
 
-    //Sobrecarga de metodo utilizada para inserir um novo veiculo
-    public Veiculo(String placa, TipoCorEnum cor, String marca, long kilometragem, BigDecimal valorDiaria, int quantidadePassageiros) {
-        this.placa = placa;
-        this.cor = cor;
-        this.marca = marca;
-        this.kilometragem = kilometragem;
-        this.valorDiaria = valorDiaria;
-        this.quantidadePassageiros = quantidadePassageiros;
-    }
+   
+	public Veiculo(Integer id, String placa, boolean alugado, String marca, String modelo, TipoCorEnum cor,
+			long kilometragem, int quantidadePassageiros, BigDecimal valorDiaria) {
+		super(id);
+		this.placa = placa;
+		this.alugado = alugado;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cor = cor;
+		this.kilometragem = kilometragem;
+		this.quantidadePassageiros = quantidadePassageiros;
+		this.valorDiaria = valorDiaria;
+	}
 
-    public BigDecimal getValorAluguel(long quantidadeDeDias){
+
+
+	public Veiculo(Integer id, String placa, String marca, String modelo, TipoCorEnum cor, long kilometragem,
+			int quantidadePassageiros) {
+		super(id);
+		this.placa = placa;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cor = cor;
+		this.kilometragem = kilometragem;
+		this.quantidadePassageiros = quantidadePassageiros;
+	}
+
+
+
+
+// atributo poderia passar para metodo e assim fazer a subscrita nas classes filhas
+	
+	public BigDecimal getValorAluguel(long quantidadeDeDias){
         return this.valorDiaria.multiply(new BigDecimal(quantidadeDeDias));
     }
 
@@ -103,4 +119,13 @@ public abstract class Veiculo extends Model{
     public void setQuantidadePassageiros(int quantidadePassageiros) {
         this.quantidadePassageiros = quantidadePassageiros;
     }
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+    
 }

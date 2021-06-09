@@ -9,6 +9,13 @@
             "name": "Launch main",
             "request": "launch",
             "mainClass": "main",
+            "projectName": "AlugaCarro_227c9882"
+        },
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "main",
             "projectName": "AlugaCarro_b3461b51"
         },
         {
