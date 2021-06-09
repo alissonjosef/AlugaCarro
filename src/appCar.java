@@ -32,8 +32,9 @@ public class appCar {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		int opcao;
 		
-	    System.out.println("____________________________Locadora de veículos_____________________________\n");	
-		System.out.println("(1)- Cadastro cliente pessoa física:");
+		do{
+	    System.out.println("____________________________Locadora de veï¿½culos_____________________________\n");	
+		System.out.println("(1)- Cadastro cliente pessoa fï¿½sica:");
 		System.out.println("(2)- Cadastro cliente pessoa juridica:");
 		System.out.println("(3)- Cadastro carro:");
 		System.out.println("(4)- Cadastro moto:");
@@ -64,13 +65,13 @@ public class appCar {
 				sc.nextLine();
 				System.out.print("Digite o nome:");
 				String nome = sc.nextLine();
-				System.out.print("Digite o endereço:");
+				System.out.print("Digite o endereï¿½o:");
 				String endereco = sc.nextLine();
-				System.out.print("Digite o número do cpf: ");
+				System.out.print("Digite o nï¿½mero do cpf: ");
 				String cpf = sc.nextLine();
 				System.out.print("Digite a data de nascimento:");
 				Date dataNascimento = sdf.parse(sc.nextLine());
-				System.out.print("Digite o número da CNH:");
+				System.out.print("Digite o nï¿½mero da CNH:");
 				String cnh =sc.nextLine();
 				
 				 PessoaFisica pf = new PessoaFisica(i,nome,endereco,false, cpf,dataNascimento,cnh);
@@ -91,9 +92,9 @@ public class appCar {
 				sc.nextLine();
 				System.out.print("Digite o nome da empresa:");
 				String nome = sc.nextLine();
-				System.out.print("Digite o endereço:");
+				System.out.print("Digite o endereï¿½o:");
 				String endereco = sc.nextLine();
-				System.out.print("Digite o número do cnpj: ");
+				System.out.print("Digite o nï¿½mero do cnpj: ");
 				String cnpj = sc.nextLine();
 				
 				;
@@ -288,7 +289,8 @@ public class appCar {
 		}
 		break;
 		
-		}while(opcao != 14);
+	}
+		}while(opcao != 12);
 		
 		
 		

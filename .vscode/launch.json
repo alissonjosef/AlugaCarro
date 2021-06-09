@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch appCar",
+            "request": "launch",
+            "mainClass": "appCar",
+            "projectName": "AlugaCarro_227c9882"
+        },
+        {
+            "type": "java",
             "name": "Launch main",
             "request": "launch",
             "mainClass": "main",
