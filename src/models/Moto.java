@@ -55,7 +55,12 @@ public class Moto extends Veiculo{
     }
     
     
-    
+
+	@Override
+	public String toString() {
+		return "Moto tipo=" + tipo + ", seguroAdicional=" + seguroAdicional + super.toString();
+	}
+
     
     
     

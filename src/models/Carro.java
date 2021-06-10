@@ -42,7 +42,7 @@ public class Carro extends Veiculo{
 
 	@Override
 	public String toString() {
-		return "Carro [tipo=" + tipo + "]";
+		return "Carro" + tipo +super.toString();
 	}
 	
 	

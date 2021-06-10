@@ -127,5 +127,18 @@ public abstract class Veiculo extends Model{
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Placa=" + placa + ", alugado=" + alugado + ", marca=" + marca + ", modelo=" + modelo + ", cor="
+				+ cor + ", kilometragem=" + kilometragem + ", quantidadePassageiros=" + quantidadePassageiros
+				+ ", valorDiaria=" + valorDiaria ;
+	}
     
+	
+	
 }
